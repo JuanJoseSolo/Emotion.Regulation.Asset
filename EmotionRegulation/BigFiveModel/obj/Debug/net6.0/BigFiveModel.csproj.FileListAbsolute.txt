@@ -1,0 +1,12 @@
+D:\Git\emotion.regulation\Emotion.Regulation.Asset\EmotionRegulation\BigFiveModel\bin\Debug\net6.0\BigFiveModel.deps.json
+D:\Git\emotion.regulation\Emotion.Regulation.Asset\EmotionRegulation\BigFiveModel\bin\Debug\net6.0\BigFiveModel.dll
+D:\Git\emotion.regulation\Emotion.Regulation.Asset\EmotionRegulation\BigFiveModel\bin\Debug\net6.0\BigFiveModel.pdb
+D:\Git\emotion.regulation\Emotion.Regulation.Asset\EmotionRegulation\BigFiveModel\obj\Debug\net6.0\BigFiveModel.csproj.AssemblyReference.cache
+D:\Git\emotion.regulation\Emotion.Regulation.Asset\EmotionRegulation\BigFiveModel\obj\Debug\net6.0\BigFiveModel.GeneratedMSBuildEditorConfig.editorconfig
+D:\Git\emotion.regulation\Emotion.Regulation.Asset\EmotionRegulation\BigFiveModel\obj\Debug\net6.0\BigFiveModel.AssemblyInfoInputs.cache
+D:\Git\emotion.regulation\Emotion.Regulation.Asset\EmotionRegulation\BigFiveModel\obj\Debug\net6.0\BigFiveModel.AssemblyInfo.cs
+D:\Git\emotion.regulation\Emotion.Regulation.Asset\EmotionRegulation\BigFiveModel\obj\Debug\net6.0\BigFiveModel.csproj.CoreCompileInputs.cache
+D:\Git\emotion.regulation\Emotion.Regulation.Asset\EmotionRegulation\BigFiveModel\obj\Debug\net6.0\BigFiveModel.dll
+D:\Git\emotion.regulation\Emotion.Regulation.Asset\EmotionRegulation\BigFiveModel\obj\Debug\net6.0\refint\BigFiveModel.dll
+D:\Git\emotion.regulation\Emotion.Regulation.Asset\EmotionRegulation\BigFiveModel\obj\Debug\net6.0\BigFiveModel.pdb
+D:\Git\emotion.regulation\Emotion.Regulation.Asset\EmotionRegulation\BigFiveModel\obj\Debug\net6.0\ref\BigFiveModel.dll
