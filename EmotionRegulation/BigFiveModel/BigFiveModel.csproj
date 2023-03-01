@@ -6,4 +6,10 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Reference Include="FLS">
+      <HintPath>dependencies\FLS.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>

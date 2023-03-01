@@ -10,3 +10,6 @@ D:\Git\emotion.regulation\Emotion.Regulation.Asset\EmotionRegulation\BigFiveMode
 D:\Git\emotion.regulation\Emotion.Regulation.Asset\EmotionRegulation\BigFiveModel\obj\Debug\net6.0\refint\BigFiveModel.dll
 D:\Git\emotion.regulation\Emotion.Regulation.Asset\EmotionRegulation\BigFiveModel\obj\Debug\net6.0\BigFiveModel.pdb
 D:\Git\emotion.regulation\Emotion.Regulation.Asset\EmotionRegulation\BigFiveModel\obj\Debug\net6.0\ref\BigFiveModel.dll
+D:\Git\emotion.regulation\Emotion.Regulation.Asset\EmotionRegulation\BigFiveModel\bin\Debug\net6.0\FLS.dll
+D:\Git\emotion.regulation\Emotion.Regulation.Asset\EmotionRegulation\BigFiveModel\bin\Debug\net6.0\FLS.pdb
+D:\Git\emotion.regulation\Emotion.Regulation.Asset\EmotionRegulation\BigFiveModel\obj\Debug\net6.0\BigFiveModel.csproj.CopyComplete
