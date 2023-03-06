@@ -225,5 +225,33 @@ namespace BigFiveModel
             
             return "Attentional.Deployment -> " + GetPertenency(fuzzyEngine);
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public string ResponseModulation()
+        {
+            // rule1 -> IF Openness is HIGH and Conscientiousness is HIGH and Agreeableness is HIGH and Extraversion is HIGH then AD is Strong applied.
+            // rule2 -> IF Openness is MIDDLE and Conscientiousness is MIDDLE and Agreeableness is MIDDLE and Extraversion is MIDDLE then AD is Slight applied.
+            // rule3 -> IF Openness is LOW and Conscientiousness is LOW and Agreeableness is LoW and Extraversion is LOW then AD is Weak applied.
+            // rule4 -> IF Neuroticism is HIGH then AD is Weak applied.
+            // rule5 -> IF Neuroticism is MIDDLE then AD is Slight applied.
+            // rule6 -> IF Neuroticism is LOW then AD is Strong applied.
+
+            // Openness          -> personalities[0]
+            // Conscientiousness -> personalities[1]
+            // Extraversion      -> personalities[2]
+            // Agreeableness     -> personalities[3]
+            // Neuroticism       -> personalities[4]
+
+            GenerateLinguisticValues("Response.Modulation");
+            var fuzzyEngine = new FuzzyEngineFactory().Default();
+            var rule1 = fuzzyEngine.Rules.If(personalities[0].Is(high).And(personalities[1].Is(high)).And(personalities[2].Is(high)).And(personalities[3].Is(high)).And(personalities[4].Is(high))).Then(_strategy.Is(weak));
+            var rule2 = fuzzyEngine.Rules.If(personalities[0].Is(middle).And(personalities[1].Is(middle)).And(personalities[2].Is(middle)).And(personalities[3].Is(middle)).And(personalities[4].Is(middle))).Then(_strategy.Is(slight));
+            var rule3 = fuzzyEngine.Rules.If(personalities[0].Is(low).And(personalities[1].Is(low)).And(personalities[2].Is(low)).And(personalities[3].Is(low)).And(personalities[4].Is(low))).Then(_strategy.Is(strong));
+            fuzzyEngine.Rules.Add(rule1,rule2,rule3);
+            
+            return "Response.Modulation -> " + GetPertenency(fuzzyEngine);
+        }
     }
 }
