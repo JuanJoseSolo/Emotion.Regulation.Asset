@@ -5,7 +5,11 @@ VisualStudioVersion = 17.4.33403.182
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmotionRegulation", "EmotionRegulation\EmotionRegulation.csproj", "{1B5662F6-200C-489F-8BFC-BE72121266E3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BigFiveModel", "BigFiveModel\BigFiveModel.csproj", "{77860E0B-8108-4250-A28D-0009221C40D1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BigFiveModel", "BigFiveModel\BigFiveModel.csproj", "{77860E0B-8108-4250-A28D-0009221C40D1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{298D6501-F779-421F-9DB2-FFA397C178A7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.EmotionRegulationAsset", "Test.EmotionRegulationAsset\Test.EmotionRegulationAsset.csproj", "{42E16116-F6B2-4802-9DE2-54601EDCCAC8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,9 +25,16 @@ Global
 		{77860E0B-8108-4250-A28D-0009221C40D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{77860E0B-8108-4250-A28D-0009221C40D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{77860E0B-8108-4250-A28D-0009221C40D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42E16116-F6B2-4802-9DE2-54601EDCCAC8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42E16116-F6B2-4802-9DE2-54601EDCCAC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42E16116-F6B2-4802-9DE2-54601EDCCAC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42E16116-F6B2-4802-9DE2-54601EDCCAC8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{42E16116-F6B2-4802-9DE2-54601EDCCAC8} = {298D6501-F779-421F-9DB2-FFA397C178A7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7682842C-326E-4553-8A04-2218C63CA5D3}
