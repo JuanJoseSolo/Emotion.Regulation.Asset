@@ -144,6 +144,10 @@ namespace BigFiveModel
             
             return "Situation.Selection -> " + GetPertenency(fuzzyEngine);
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public string SituationModification()
         {
             // rule1 -> IF Neuroticism is HIGH and Agreeableness is HIGH then SM is Weak applied.
@@ -171,6 +175,10 @@ namespace BigFiveModel
             
             return "Situation.Modification -> " + GetPertenency(fuzzyEngine);
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public string AttentionalDeployment()
         {
             // rule1 -> IF Openness is HIGH and Conscientiousness is HIGH and Agreeableness is HIGH and Extraversion is HIGH then AD is Strong applied.
@@ -198,6 +206,10 @@ namespace BigFiveModel
             
             return "Attentional.Deployment -> " + GetPertenency(fuzzyEngine);
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public string CongnitiveChange()
         {
             // rule1 -> IF Openness is HIGH and Conscientiousness is HIGH and Agreeableness is HIGH and Extraversion is HIGH then AD is Strong applied.
