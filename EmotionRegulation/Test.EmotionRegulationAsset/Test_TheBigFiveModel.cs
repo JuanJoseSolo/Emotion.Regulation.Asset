@@ -152,5 +152,11 @@ namespace Test.EmotionRegulationAsset
             Assert.IsTrue(conscientiousness.Contains("Strong"));
             Assert.IsTrue(neuroticism.Contains("Strong"));
         }
+        [TestMethod]
+        public void Test_Plotting()
+        {
+            BigFiveModelAsset personality = new BigFiveModelAsset(openness: 1, conscientiousness: 10, extraversion: 20, agreeableness: 10, neuroticism: 20);
+            personality.Plot();
+        }
     }
 }

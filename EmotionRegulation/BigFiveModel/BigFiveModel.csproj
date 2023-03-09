@@ -7,8 +7,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="BigFiveModelAsset.cs~RF2c1f21d5.TMP" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Reference Include="FLS">
       <HintPath>dependencies\FLS.dll</HintPath>
+    </Reference>
+    <Reference Include="ScottPlot">
+      <HintPath>dependencies\ScottPlot.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing.Common">
+      <HintPath>dependencies\System.Drawing.Common.dll</HintPath>
     </Reference>
   </ItemGroup>
 

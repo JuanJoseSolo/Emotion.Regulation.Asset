@@ -1,5 +1,8 @@
 ﻿using FLS;
 using FLS.MembershipFunctions;
+using ScottPlot;
+using System.Diagnostics;
+
 //TODO: Add comments and documentation; add plotting method.
 namespace BigFiveModel
 {
@@ -46,6 +49,7 @@ namespace BigFiveModel
             strong = _strategy.MembershipFunctions.AddRectangle("NONE", 1, 1);
             slight = _strategy.MembershipFunctions.AddRectangle("NONE", 1, 1);
             weak = _strategy.MembershipFunctions.AddRectangle("NONE", 1, 1);
+            GenerateLinguisticValues();
             foreach(var trait in traits)
             {
                 personalities.Add(new LinguisticVariable(trait));
@@ -83,7 +87,7 @@ namespace BigFiveModel
         /// 
         /// </summary>
         /// <param name="strategy"></param>
-        private void GenerateLinguisticValues(string strategy)
+        private void GenerateLinguisticValues(string strategy="NONE")
         {
             _strategy = new LinguisticVariable(strategy);
             weak = _strategy.MembershipFunctions.AddZShaped("weak", 3, 1, 0, 10);
@@ -264,6 +268,54 @@ namespace BigFiveModel
             fuzzyEngine.Rules.Add(rule1,rule2,rule3);
             
             return "Response.Modulation -> " + GetPertenency(fuzzyEngine);
+        }
+
+        public void Plot()
+        {
+            var plots = new Dictionary<string, List<IMembershipFunction>>()
+            {
+                {"Strategies", new List<IMembershipFunction>() { weak, slight, strong } },
+                {"Personality", new List<IMembershipFunction>() { low, middle, high } }
+            };
+            var level_names = new List<string>() { "low", "middle", "high" };
+            string[] customColors = { "#0099ff", "#64b15f", "#e83225" }; //colors : http://medialab.github.io/iwanthue/
+            var n = 0;
+            int limits = 0;
+            foreach(var list in plots)
+            {
+                if (plots.Keys.ToList()[n] == "Strategies") { limits = 10; } else { limits = 100; };
+                var plot = new Plot(1200, 900) { Palette=Palette.FromHtmlColors(customColors)};
+    
+                var levelList = new List<List<double>>() { new List<double>(),new List<double>(), new List<double>()};
+                var x_axis = DataGen.Range(0, limits+1, 1);
+                int j = 0;
+                foreach (var function in list.Value)
+                {
+                    for (int i = 0; i < limits+1; i++)
+                    {
+                        levelList[j].Add(function.Fuzzify(i));
+                    }
+                    j ++;
+                }
+                plot.Title("Personality", size: 30);
+                plot.SetAxisLimitsY(0, 1.15);
+                plot.SetAxisLimitsX(0, limits);
+                plot.YLabel("Membership");
+                plot.XLabel("Personality level");
+                plot.YAxis.LabelStyle(fontSize: 25);
+                plot.YAxis.TickLabelStyle(fontSize: 17);
+                plot.XAxis.LabelStyle(fontSize: 25);
+                plot.XAxis.TickLabelStyle(fontSize: 17);
+                plot.Legend(true, location: Alignment.UpperLeft).FontSize = 15;
+                j = 0; 
+                foreach(var level in levelList)
+                {
+                    plot.AddFill(x_axis.ToArray(), level.ToArray()).Label = level_names[j];
+                    j++;
+                }
+                plot.SaveFig($"../../../../{plots.Keys.ToList()[n]}.png");
+                n++;
+            }
         }
     }
 }
