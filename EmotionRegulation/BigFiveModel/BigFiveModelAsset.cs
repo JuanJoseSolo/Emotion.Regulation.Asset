@@ -1,7 +1,7 @@
 ﻿using FLS;
 using FLS.MembershipFunctions;
 using ScottPlot;
-using System.Diagnostics;
+using System.Drawing;
 
 //TODO: Add comments and documentation; add plotting method.
 namespace BigFiveModel
@@ -17,7 +17,7 @@ namespace BigFiveModel
         LinguisticVariable personality;
         LinguisticVariable _strategy;
         List<LinguisticVariable> personalities;
-        IMembershipFunction high,strong;
+        IMembershipFunction high, strong;
         IMembershipFunction middle, slight;
         IMembershipFunction low, weak;
         /// <summary>
@@ -36,7 +36,7 @@ namespace BigFiveModel
         /// <param name="extraversion"></param>
         /// <param name="agreeableness"></param>
         /// <param name="neuroticism"></param>
-        public BigFiveModelAsset(float openness, float conscientiousness,float extraversion, float agreeableness, float neuroticism)
+        public BigFiveModelAsset(float openness=0, float conscientiousness = 0,float extraversion = 0, float agreeableness = 0, float neuroticism = 0)
         {
             traits = new List<string>() { "Openness","Conscientiousness","Extraversion","Agreeableness","Neuroticism" };
             personality_level = new float[5] { openness, conscientiousness, extraversion, agreeableness, neuroticism };
@@ -117,11 +117,12 @@ namespace BigFiveModel
             };
             return pre_result.Aggregate((force, numerical) => force.Value > numerical.Value ? force : numerical).Key;;
         }
+        #region Strategies implementation 
         /// <summary>
         /// 
         /// </summary>
         /// <returns></returns>
-        public string SituationSelection()
+        private string SituationSelection()
         {
             // rule1 -> IF Conscientiousness is HIGH and Neuroticism is HIGH then SS is Strong applied.
             // rule2 -> IF Conscientiousness is MIDDLE and Neuroticism is MIDDLE then SS is Slight applied.
@@ -152,7 +153,7 @@ namespace BigFiveModel
         /// 
         /// </summary>
         /// <returns></returns>
-        public string SituationModification()
+        private string SituationModification()
         {
             // rule1 -> IF Neuroticism is HIGH and Agreeableness is HIGH then SM is Weak applied.
             // rule2 -> IF Neuroticism is MIDDLE and Agreeableness is MIDDLE then SM is Slight applied.
@@ -183,7 +184,7 @@ namespace BigFiveModel
         /// 
         /// </summary>
         /// <returns></returns>
-        public string AttentionalDeployment()
+        private string AttentionalDeployment()
         {
             // rule1 -> IF Openness is HIGH and Conscientiousness is HIGH and Agreeableness is HIGH and Extraversion is HIGH then AD is Strong applied.
             // rule2 -> IF Openness is MIDDLE and Conscientiousness is MIDDLE and Agreeableness is MIDDLE and Extraversion is MIDDLE then AD is Slight applied.
@@ -214,7 +215,7 @@ namespace BigFiveModel
         /// 
         /// </summary>
         /// <returns></returns>
-        public string CongnitiveChange()
+        private string CongnitiveChange()
         {
             // rule1 -> IF Openness is HIGH and Conscientiousness is HIGH and Agreeableness is HIGH and Extraversion is HIGH then AD is Strong applied.
             // rule2 -> IF Openness is MIDDLE and Conscientiousness is MIDDLE and Agreeableness is MIDDLE and Extraversion is MIDDLE then AD is Slight applied.
@@ -245,7 +246,7 @@ namespace BigFiveModel
         /// 
         /// </summary>
         /// <returns></returns>
-        public string ResponseModulation()
+        private string ResponseModulation()
         {
             // rule1 -> IF Openness is HIGH and Conscientiousness is HIGH and Agreeableness is HIGH and Extraversion is HIGH then AD is Strong applied.
             // rule2 -> IF Openness is MIDDLE and Conscientiousness is MIDDLE and Agreeableness is MIDDLE and Extraversion is MIDDLE then AD is Slight applied.
@@ -268,6 +269,32 @@ namespace BigFiveModel
             fuzzyEngine.Rules.Add(rule1,rule2,rule3);
             
             return "Response.Modulation -> " + GetPertenency(fuzzyEngine);
+        }
+        #endregion
+        public List<string> StrategiesForce()
+        {
+            return new List<string>()
+            {
+                this.SituationSelection(),
+                this.SituationModification(),
+                this.AttentionalDeployment(),
+                this.CongnitiveChange(),
+                this.ResponseModulation()
+            };
+        }
+        public List<string> StrategiesToApply()
+        {
+            var strategies = StrategiesForce();
+            var apply = new List<string>();
+            foreach (var strategy in strategies) 
+            {
+                string _strategy = strategy.ToUpper();
+                if (_strategy.Contains("STRONG"))
+                {
+                    apply.Add(_strategy.Split("->")[0]);
+                }
+            }
+            return apply;
         }
 
         public void Plot()

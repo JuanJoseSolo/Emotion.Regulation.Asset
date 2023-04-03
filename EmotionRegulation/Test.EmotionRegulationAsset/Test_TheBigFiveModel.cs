@@ -16,13 +16,13 @@ namespace Test.EmotionRegulationAsset
             BigFiveModelAsset bfm_extraversion = new BigFiveModelAsset(openness: 10, conscientiousness: 20, extraversion: 99, agreeableness: 30, neuroticism: 20);
             BigFiveModelAsset bfm_agreeableness = new BigFiveModelAsset(openness: 10, conscientiousness: 20, extraversion: 30, agreeableness: 99, neuroticism: 20);
             BigFiveModelAsset bfm_neuroticism = new BigFiveModelAsset(openness: 10, conscientiousness: 20, extraversion: 30, agreeableness: 20, neuroticism: 99);
-            string TestingSituationSelection(BigFiveModelAsset personality) { return personality.SituationSelection(); }
+            List<string> TestingSituationSelection(BigFiveModelAsset personality) { return personality.StrategiesForce(); }
             // Act
-            string openness = TestingSituationSelection(bfm_openness);
-            string conscientiousness = TestingSituationSelection(bfm_conscientiousness);
-            string extraversion = TestingSituationSelection(bfm_extraversion);
-            string agreeableness = TestingSituationSelection(bfm_agreeableness);
-            string neuroticism = TestingSituationSelection(bfm_neuroticism);
+            var openness = TestingSituationSelection(bfm_openness);
+            var conscientiousness = TestingSituationSelection(bfm_conscientiousness);
+            var extraversion = TestingSituationSelection(bfm_extraversion);
+            var agreeableness = TestingSituationSelection(bfm_agreeableness);
+            var neuroticism = TestingSituationSelection(bfm_neuroticism);
             // Print outputs
             Debug.Print($"{bfm_openness.Dominant} -> {openness}");
             Debug.Print($"{bfm_conscientiousness.Dominant} -> {conscientiousness}");
@@ -45,13 +45,13 @@ namespace Test.EmotionRegulationAsset
             BigFiveModelAsset bfm_extraversion = new BigFiveModelAsset(openness: 10, conscientiousness: 20, extraversion: 99, agreeableness: 30, neuroticism: 20);
             BigFiveModelAsset bfm_agreeableness = new BigFiveModelAsset(openness: 10, conscientiousness: 20, extraversion: 30, agreeableness: 99, neuroticism: 20);
             BigFiveModelAsset bfm_neuroticism = new BigFiveModelAsset(openness: 10, conscientiousness: 20, extraversion: 30, agreeableness: 20, neuroticism: 99);
-            string TestingSituationModification(BigFiveModelAsset personality){ return personality.SituationModification(); }
+            List<string> TestingSituationModification(BigFiveModelAsset personality){ return personality.StrategiesForce(); }
             // Act
-            string openness = TestingSituationModification(bfm_openness);
-            string conscientiousness = TestingSituationModification(bfm_conscientiousness);
-            string extraversion = TestingSituationModification(bfm_extraversion);
-            string agreeableness = TestingSituationModification(bfm_agreeableness);
-            string neuroticism = TestingSituationModification(bfm_neuroticism);
+            var openness = TestingSituationModification(bfm_openness);
+            var conscientiousness = TestingSituationModification(bfm_conscientiousness);
+            var extraversion = TestingSituationModification(bfm_extraversion);
+            var agreeableness = TestingSituationModification(bfm_agreeableness);
+            var neuroticism = TestingSituationModification(bfm_neuroticism);
             // Print outputs
             Debug.Print($"{bfm_openness.Dominant} -> {openness}");
             Debug.Print($"{bfm_conscientiousness.Dominant} -> {conscientiousness}");
@@ -74,13 +74,13 @@ namespace Test.EmotionRegulationAsset
             BigFiveModelAsset bfm_extraversion = new BigFiveModelAsset(openness: 10, conscientiousness: 20, extraversion: 99, agreeableness: 30, neuroticism: 20);
             BigFiveModelAsset bfm_agreeableness = new BigFiveModelAsset(openness: 10, conscientiousness: 20, extraversion: 30, agreeableness: 99, neuroticism: 20);
             BigFiveModelAsset bfm_neuroticism = new BigFiveModelAsset(openness: 10, conscientiousness: 20, extraversion: 30, agreeableness: 20, neuroticism: 99);
-            string TestingAttentionalDeployment(BigFiveModelAsset personality) { return personality.AttentionalDeployment(); }
+            List<string> TestingAttentionalDeployment(BigFiveModelAsset personality) { return personality.StrategiesForce(); }
             // Act
-            string openness = TestingAttentionalDeployment(bfm_openness);
-            string conscientiousness = TestingAttentionalDeployment(bfm_conscientiousness);
-            string extraversion = TestingAttentionalDeployment(bfm_extraversion);
-            string agreeableness = TestingAttentionalDeployment(bfm_agreeableness);
-            string neuroticism = TestingAttentionalDeployment(bfm_neuroticism);
+            var openness = TestingAttentionalDeployment(bfm_openness);
+            var conscientiousness = TestingAttentionalDeployment(bfm_conscientiousness);
+            var extraversion = TestingAttentionalDeployment(bfm_extraversion);
+            var agreeableness = TestingAttentionalDeployment(bfm_agreeableness);
+            var neuroticism = TestingAttentionalDeployment(bfm_neuroticism);
             // Print outputs
             Debug.Print($"{bfm_openness.Dominant} -> {openness}");
             Debug.Print($"{bfm_conscientiousness.Dominant} -> {conscientiousness}");
@@ -103,13 +103,13 @@ namespace Test.EmotionRegulationAsset
             BigFiveModelAsset bfm_extraversion = new BigFiveModelAsset(openness: 10, conscientiousness: 20, extraversion: 99, agreeableness: 30, neuroticism: 20);
             BigFiveModelAsset bfm_agreeableness = new BigFiveModelAsset(openness: 10, conscientiousness: 20, extraversion: 30, agreeableness: 99, neuroticism: 20);
             BigFiveModelAsset bfm_neuroticism = new BigFiveModelAsset(openness: 10, conscientiousness: 20, extraversion: 30, agreeableness: 20, neuroticism: 99);
-            string TestingCognitiveChange(BigFiveModelAsset personality) { return personality.CongnitiveChange(); }
+            List<string> TestingCognitiveChange(BigFiveModelAsset personality) { return personality.StrategiesForce(); }
             // Act
-            string openness = TestingCognitiveChange(bfm_openness);
-            string conscientiousness = TestingCognitiveChange(bfm_conscientiousness);
-            string extraversion = TestingCognitiveChange(bfm_extraversion);
-            string agreeableness = TestingCognitiveChange(bfm_agreeableness);
-            string neuroticism = TestingCognitiveChange(bfm_neuroticism);
+            var openness = TestingCognitiveChange(bfm_openness);
+            var conscientiousness = TestingCognitiveChange(bfm_conscientiousness);
+            var extraversion = TestingCognitiveChange(bfm_extraversion);
+            var agreeableness = TestingCognitiveChange(bfm_agreeableness);
+            var neuroticism = TestingCognitiveChange(bfm_neuroticism);
             // Print outputs
             Debug.Print($"{bfm_openness.Dominant} -> {openness}");
             Debug.Print($"{bfm_conscientiousness.Dominant} -> {conscientiousness}");
@@ -132,13 +132,13 @@ namespace Test.EmotionRegulationAsset
             BigFiveModelAsset bfm_extraversion = new BigFiveModelAsset(openness: 10, conscientiousness: 20, extraversion: 1, agreeableness: 30, neuroticism: 20);
             BigFiveModelAsset bfm_agreeableness = new BigFiveModelAsset(openness: 10, conscientiousness: 20, extraversion: 30, agreeableness: 9, neuroticism: 20);
             BigFiveModelAsset bfm_neuroticism = new BigFiveModelAsset(openness: 10, conscientiousness: 20, extraversion: 30, agreeableness: 20, neuroticism: 1 );
-            string TestingCognitiveChange(BigFiveModelAsset personality) { return personality.ResponseModulation(); }
+            List<string> TestingCognitiveChange(BigFiveModelAsset personality) { return personality.StrategiesForce(); }
             // Act
-            string openness = TestingCognitiveChange(bfm_openness);
-            string conscientiousness = TestingCognitiveChange(bfm_conscientiousness);
-            string extraversion = TestingCognitiveChange(bfm_extraversion);
-            string agreeableness = TestingCognitiveChange(bfm_agreeableness);
-            string neuroticism = TestingCognitiveChange(bfm_neuroticism);
+            var openness = TestingCognitiveChange(bfm_openness);
+            var conscientiousness = TestingCognitiveChange(bfm_conscientiousness);
+            var extraversion = TestingCognitiveChange(bfm_extraversion);
+            var agreeableness = TestingCognitiveChange(bfm_agreeableness);
+            var neuroticism = TestingCognitiveChange(bfm_neuroticism);
             // Print outputs
             Debug.Print($"{bfm_openness.Dominant} -> {openness}");
             Debug.Print($"{bfm_conscientiousness.Dominant} -> {conscientiousness}");
@@ -153,7 +153,7 @@ namespace Test.EmotionRegulationAsset
             Assert.IsTrue(neuroticism.Contains("Strong"));
         }
         [TestMethod]
-        public void Test_Plotting()
+        public void Test_Plots()
         {
             BigFiveModelAsset personality = new BigFiveModelAsset(openness: 1, conscientiousness: 10, extraversion: 20, agreeableness: 10, neuroticism: 20);
             personality.Plot();
