@@ -2,6 +2,7 @@
 using FLS.MembershipFunctions;
 using ScottPlot;
 using System.Drawing;
+using System.IO;
 
 //TODO: Add comments and documentation; add plotting method.
 namespace BigFiveModel
@@ -302,8 +303,9 @@ namespace BigFiveModel
             return apply;
         }
 
-        public void Plot()
+        public void Plot(string figurePath="../../../Plots/")
         {
+            Directory.CreateDirectory(figurePath);
             var plots = new Dictionary<string, List<IMembershipFunction>>()
             {
                 {"Strategies", new List<IMembershipFunction>() { weak, slight, strong } },
@@ -345,7 +347,8 @@ namespace BigFiveModel
                     plot.AddFill(x_axis.ToArray(), level.ToArray()).Label = level_names[j];
                     j++;
                 }
-                plot.SaveFig($"../../../../{plots.Keys.ToList()[n]}.png");
+                string figure = figurePath + plots.Keys.ToList()[n];
+                plot.SaveFig($"{figure}.png");
                 n++;
             }
         }

@@ -14,7 +14,8 @@ namespace BigFiveModel.Tutorial
             Console.WriteLine($"And its pertenency level is: {dominant.level}");
             var strategies = big_five_model.StrategiesToApply;
             Console.WriteLine("According to the personality, the strategies to apply are the following:");
-            strategies.ForEach(strategy => Console.WriteLine(strategy.ToString()));
+            strategies.ForEach(strategy => Console.WriteLine(" - "+strategy.ToString()));
+            big_five_model.Plot();
         }
     }
 }
