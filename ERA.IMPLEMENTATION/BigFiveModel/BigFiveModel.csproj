@@ -14,23 +14,11 @@
     <Reference Include="FLS">
       <HintPath>dependencies\FLS.dll</HintPath>
     </Reference>
-    <Reference Include="IntegratedAuthoringTool">
-      <HintPath>..\..\FAtiMA-Engine\IntegratedAuthoringTool.dll</HintPath>
-    </Reference>
-    <Reference Include="RolePlayCharacter">
-      <HintPath>..\..\FAtiMA-Engine\RolePlayCharacter.dll</HintPath>
-    </Reference>
     <Reference Include="ScottPlot">
       <HintPath>dependencies\ScottPlot.dll</HintPath>
     </Reference>
     <Reference Include="System.Drawing.Common">
       <HintPath>dependencies\System.Drawing.Common.dll</HintPath>
-    </Reference>
-    <Reference Include="WellFormedNames">
-      <HintPath>..\..\FAtiMA-Engine\WellFormedNames.dll</HintPath>
-    </Reference>
-    <Reference Include="WorldModel">
-      <HintPath>..\..\FAtiMA-Engine\WorldModel.dll</HintPath>
     </Reference>
   </ItemGroup>
 

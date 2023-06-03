@@ -23,11 +23,10 @@ namespace BigFiveModel
         /// <summary>
         /// 
         /// </summary>
-        public string Dominant { get => GetDominantPersonality().trait; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public float Value { get => GetDominantPersonality().membership; }
+        public (string personality, float level) Dominant { get => GetDominantPersonality(); }
+        
+        public List<string> StrategiesToApply { get=> GetStrategiesToApply(); }
+
         /// <summary>
         /// 
         /// </summary>
@@ -36,7 +35,7 @@ namespace BigFiveModel
         /// <param name="extraversion"></param>
         /// <param name="agreeableness"></param>
         /// <param name="neuroticism"></param>
-        public BigFiveModelAsset(float openness=0, float conscientiousness = 0,float extraversion = 0, float agreeableness = 0, float neuroticism = 0)
+        public BigFiveModelAsset(float openness, float conscientiousness,float extraversion, float agreeableness, float neuroticism)
         {
             traits = new List<string>() { "Openness","Conscientiousness","Extraversion","Agreeableness","Neuroticism" };
             personality_level = new float[5] { openness, conscientiousness, extraversion, agreeableness, neuroticism };
@@ -271,7 +270,7 @@ namespace BigFiveModel
             return "Response.Modulation -> " + GetPertenency(fuzzyEngine);
         }
         #endregion
-        public List<string> StrategiesForce()
+        private List<string> GetStrategiesForce()
         {
             return new List<string>()
             {
@@ -282,16 +281,22 @@ namespace BigFiveModel
                 this.ResponseModulation()
             };
         }
-        public List<string> StrategiesToApply()
+        private List<string> GetStrategiesToApply()
         {
-            var strategies = StrategiesForce();
+            var strategies = GetStrategiesForce();
             var apply = new List<string>();
-            foreach (var strategy in strategies) 
-            {
-                string _strategy = strategy.ToUpper();
-                if (_strategy.Contains("STRONG"))
+            string temp_strategy = "";
+            foreach (var strategy in strategies)
+            { 
+                if (strategy.Contains("Strong"))
                 {
-                    apply.Add(_strategy.Split("->")[0]);
+                    if(strategy != temp_strategy)
+                    {
+                        var str = strategy.Split("->")[0];
+                        var _str = str.Replace('.', ' ');
+                        apply.Add(_str);
+                        temp_strategy = strategy;
+                    }
                 }
             }
             return apply;
