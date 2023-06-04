@@ -21,12 +21,14 @@ namespace BigFiveModel
         IMembershipFunction high, strong;
         IMembershipFunction middle, slight;
         IMembershipFunction low, weak;
+
         /// <summary>
         /// 
         /// </summary>
         public (string personality, float level) Dominant { get => GetDominantPersonality(); }
         
         public List<string> StrategiesToApply { get=> GetStrategiesToApply(); }
+        public List<string> AllStrategies { get => GetStrategiesForce(); }
 
         /// <summary>
         /// 
@@ -147,7 +149,7 @@ namespace BigFiveModel
             var rule6 = fuzzyEngine.Rules.If(personalities[2].Is(low).And(personalities[0].Is(low)).And(personalities[3].Is(low))).Then(_strategy.Is(strong));
             fuzzyEngine.Rules.Add(rule1,rule2,rule3,rule4,rule5,rule6);
             
-            return "Situation.Selection -> " + GetPertenency(fuzzyEngine);
+            return "Situation Selection -> " + GetPertenency(fuzzyEngine);
         }
         /// <summary>
         /// 
@@ -178,7 +180,7 @@ namespace BigFiveModel
             var rule6 = fuzzyEngine.Rules.If(personalities[1].Is(low).And(personalities[2].Is(low)).And(personalities[0].Is(low))).Then(_strategy.Is(slight));
             fuzzyEngine.Rules.Add(rule1,rule2,rule3,rule4,rule5,rule6);
             
-            return "Situation.Modification -> " + GetPertenency(fuzzyEngine);
+            return "Situation Modification -> " + GetPertenency(fuzzyEngine);
         }
         /// <summary>
         /// 
@@ -209,7 +211,7 @@ namespace BigFiveModel
             var rule6 = fuzzyEngine.Rules.If(personalities[4].Is(low)).Then(_strategy.Is(strong));
             fuzzyEngine.Rules.Add(rule1,rule2,rule3,rule4,rule5,rule6);
             
-            return "Attentional.Deployment -> " + GetPertenency(fuzzyEngine);
+            return "Attentional Deployment -> " + GetPertenency(fuzzyEngine);
         }
         /// <summary>
         /// 
@@ -240,9 +242,9 @@ namespace BigFiveModel
             var rule6 = fuzzyEngine.Rules.If(personalities[4].Is(low)).Then(_strategy.Is(strong));
             fuzzyEngine.Rules.Add(rule1,rule2,rule3,rule4,rule5,rule6);
             
-            return "Attentional.Deployment -> " + GetPertenency(fuzzyEngine);
+            return "Cognitive Change -> " + GetPertenency(fuzzyEngine);
         }
-        /// <summary>
+        /// <summary
         /// 
         /// </summary>
         /// <returns></returns>
@@ -268,7 +270,7 @@ namespace BigFiveModel
             var rule3 = fuzzyEngine.Rules.If(personalities[0].Is(low).And(personalities[1].Is(low)).And(personalities[2].Is(low)).And(personalities[3].Is(low)).And(personalities[4].Is(low))).Then(_strategy.Is(strong));
             fuzzyEngine.Rules.Add(rule1,rule2,rule3);
             
-            return "Response.Modulation -> " + GetPertenency(fuzzyEngine);
+            return "Response Modulation -> " + GetPertenency(fuzzyEngine);
         }
         #endregion
         private List<string> GetStrategiesForce()
@@ -294,8 +296,7 @@ namespace BigFiveModel
                     if(strategy != temp_strategy)
                     {
                         var str = strategy.Split("->")[0];
-                        var _str = str.Replace('.', ' ');
-                        apply.Add(_str);
+                        apply.Add(str);
                         temp_strategy = strategy;
                     }
                 }
@@ -303,8 +304,9 @@ namespace BigFiveModel
             return apply;
         }
 
-        public void Plot(string figurePath="../../../Plots/")
+        public void GetFuzzyPlots(string figurePath="../../../Plots/")
         {
+            /// To use this method, you need to isntall the 'System.Drawing.Common' nuget. Go to Nuget Packages and install it.
             Directory.CreateDirectory(figurePath);
             var plots = new Dictionary<string, List<IMembershipFunction>>()
             {
