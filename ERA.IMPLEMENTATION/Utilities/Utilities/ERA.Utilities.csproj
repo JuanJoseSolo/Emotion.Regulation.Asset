@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="FAtiMAConnection.cs~RF5c4e5ff.TMP" />
+    <None Remove="FAtiMAConnection.cs~RF5d35d5e.TMP" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="GAIPS.Rage">
+      <HintPath>..\..\..\FAtiMA.Engine\GAIPS.Rage.dll</HintPath>
+    </Reference>
+    <Reference Include="IntegratedAuthoringTool">
+      <HintPath>..\..\..\FAtiMA.Engine\IntegratedAuthoringTool.dll</HintPath>
+    </Reference>
+    <Reference Include="RolePlayCharacter">
+      <HintPath>..\..\..\FAtiMA.Engine\RolePlayCharacter.dll</HintPath>
+    </Reference>
+    <Reference Include="WellFormedNames">
+      <HintPath>..\..\..\FAtiMA.Engine\WellFormedNames.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

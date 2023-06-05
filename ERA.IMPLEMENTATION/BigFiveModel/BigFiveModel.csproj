@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="AgentAsset.cs~RF5afb272.TMP" />
     <None Remove="BigFiveModelAsset.cs~RF2c1f21d5.TMP" />
   </ItemGroup>
 
@@ -16,17 +17,12 @@
 
   <ItemGroup>
     <ProjectReference Include="..\EmotionRegulation\EmotionRegulation.csproj" />
+    <ProjectReference Include="..\Utilities\Utilities\ERA.Utilities.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <Reference Include="FLS">
       <HintPath>dependencies\FLS.dll</HintPath>
-    </Reference>
-    <Reference Include="GAIPS.Rage">
-      <HintPath>..\..\FAtiMA.Engine\GAIPS.Rage.dll</HintPath>
-    </Reference>
-    <Reference Include="IntegratedAuthoringTool">
-      <HintPath>..\..\FAtiMA.Engine\IntegratedAuthoringTool.dll</HintPath>
     </Reference>
     <Reference Include="KnowledgeBase">
       <HintPath>..\..\FAtiMA.Engine\KnowledgeBase.dll</HintPath>

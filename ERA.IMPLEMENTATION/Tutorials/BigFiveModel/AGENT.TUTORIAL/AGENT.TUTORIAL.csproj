@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -9,6 +9,12 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\BigFiveModel\BigFiveModel.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="IntegratedAuthoringTool">
+      <HintPath>..\..\..\..\FAtiMA.Engine\IntegratedAuthoringTool.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>
