@@ -27,9 +27,9 @@ namespace BigFiveModel.Tutorial
             allStrategies.ForEach(strategy => Console.WriteLine(" - " + strategy.ToString()));
             
             // Now, we need to link our agent to the FAtiMA character, to do this we need to indicate where is the .json FAtiMA files.
-            FAtiMAManagement FAtiMAArch = new FAtiMAManagement(@"D:\Git\Emotion.Regulation.Asset\Scenarios\");
+            FAtiMAmanagement fatima_arch = new FAtiMAmanagement(@"D:\Git\Emotion.Regulation.Asset\Scenarios\");
             // Linking agent to character:
-            foreach(var fatimaCharacter in FAtiMAArch.IAT.Characters)
+            foreach(var fatimaCharacter in fatima_arch.IAT.Characters)
             {
                 if(myAgent.Name == fatimaCharacter.CharacterName.ToString()) 
                 {

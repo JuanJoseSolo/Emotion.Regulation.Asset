@@ -5,13 +5,13 @@ using GAIPS.Rage;
 
 namespace ERA.Utilities
 {
-    public class FAtiMAManagement
+    public class FAtiMAmanagement
     {
         
         public IntegratedAuthoringToolAsset IAT { get => iat; }
         string pathFiles = string.Empty;
         IntegratedAuthoringToolAsset iat;
-        public FAtiMAManagement(string pathFiles) 
+        public FAtiMAmanagement(string pathFiles) 
         {
             iat = new IntegratedAuthoringToolAsset();
             this.pathFiles = pathFiles;
